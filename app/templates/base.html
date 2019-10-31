@@ -1,0 +1,21 @@
+<html>
+    <head>
+        {% if title %}
+            <title>{{ title }} - Your Excel System</title>
+        {% else %}
+            <title>Welcome to YES</title>
+        {% endif %}
+    </head>
+
+    <body>
+        <div>Your Excel System: 
+            <a href="/index">Home</a>
+        </div>
+
+        <hr>
+
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>
