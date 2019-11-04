@@ -1,49 +1,4 @@
-2019-11-04 16:11:40,916 ERROR: Exception on /user/b [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 91, in user
-    return render_template('user.html', posts = posts)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 14, in root
-    {% if user.last_seen %}
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\base.html", line 54, in root
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 26, in block_content
-    </p>
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2019-11-04 16:42:41,473 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:43:16,645 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:48:55,650 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:49:28,207 ERROR: Exception on /user/b [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
+2019-11-04 16:10:01,981 ERROR: Exception on /user/b [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -94,7 +49,56 @@ Traceback (most recent call last):
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with values ['username']. Did you mean 'login' instead?
-2019-11-04 16:50:56,479 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:51:02,927 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 17:56:25,051 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 17:57:54,213 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-04 16:10:28,497 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-04 16:10:42,135 ERROR: Exception on /user/b [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 91, in user
+    return render_template('user.html', user=user, posts = posts)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 14, in root
+    {% if user.last_seen %}
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\base.html", line 54, in root
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 49, in block_content
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\runtime.py", line 262, in call
+    return __obj(*args, **kwargs)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with values ['username']. Did you mean 'login' instead?
+2019-11-04 16:11:27,606 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
