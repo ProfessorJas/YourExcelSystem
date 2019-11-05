@@ -1,4 +1,4 @@
-2019-11-04 16:11:40,916 ERROR: Exception on /user/b [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
+2019-11-05 10:00:26,756 ERROR: Exception on / [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,53 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 91, in user
-    return render_template('user.html', posts = posts)
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 31, in index
+    posts = current_user.followed_post().all()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\werkzeug\local.py", line 348, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'followed_post'
+2019-11-05 10:03:56,816 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:06:08,745 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:06:40,542 ERROR: Exception on / [POST] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 25, in index
+    post = Post(body=form.body.data, author=current_user)
+AttributeError: 'PostForm' object has no attribute 'body'
+2019-11-05 10:09:03,308 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:28:30,891 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:32:36,802 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:32:39,425 ERROR: Exception on / [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 33, in index
+    return render_template('index.html', title = 'Home', form = form, posts = posts)
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -28,73 +73,28 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 1, in top-level template code
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\index.html", line 1, in top-level template code
     {% extends "base.html" %}
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
     return concat(self.root_render_func(self.new_context(vars)))
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 14, in root
-    {% if user.last_seen %}
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\index.html", line 14, in root
+    {% for error in errors %}
   File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\base.html", line 54, in root
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 26, in block_content
-    </p>
+  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\index.html", line 49, in block_content
   File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'user' is undefined
-2019-11-04 16:42:41,473 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:43:16,645 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:48:55,650 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:49:28,207 ERROR: Exception on /user/b [GET] [in c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\routes.py", line 91, in user
-    return render_template('user.html', user=user, posts = posts)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 14, in root
-    {% if user.last_seen %}
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\base.html", line 54, in root
-  File "C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\templates\user.html", line 49, in block_content
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\jinja2\runtime.py", line 262, in call
-    return __obj(*args, **kwargs)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\flask\helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "c:\users\hylz\desktop\tutorial\yourexcelsystem\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with values ['username']. Did you mean 'login' instead?
-2019-11-04 16:50:56,479 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 16:51:02,927 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 17:56:25,051 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
-2019-11-04 17:57:54,213 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:33:21,579 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:35:03,384 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:37:33,644 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:39:24,260 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:39:45,926 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 10:46:55,843 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:15:50,406 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:19:00,410 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:23:27,133 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:24:51,522 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:30:06,983 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:32:36,292 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:34:32,834 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]
+2019-11-05 11:52:53,729 INFO: Microblog startup [in C:\Users\hylz\Desktop\tutorial\YourExcelSystem\app\__init__.py:35]

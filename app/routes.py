@@ -1,9 +1,9 @@
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Post
 from werkzeug.urls import url_parse
 
 @app.before_request
@@ -14,24 +14,30 @@ def before_request():
         db.session.commit()
 
 # 2 routes
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 # a view function
 @login_required
-def index():    
-    posts = [
-        {
-            'author': {'username': 'a'},
-            'body': 'What a nice day!'
-        },
-        {
-            'author': {'username': 'b'},
-            'body': '!JAJA!'
-        }
-    ]
+def index():
+    form = PostForm()
 
-    return render_template('index.html', title = 'Home', posts = posts)
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post is not live!')
+        return redirect(url_for('index'))
 
+    posts = current_user.followed_posts().all()
+
+    return render_template('index.html', title = 'Home', form = form, posts = posts)
+
+@app.route('/explore')
+@login_required
+def explore():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+
+    return render_template('index.html', title='Explore', posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -83,11 +89,11 @@ def register():
 def user(username):
     user = User.query.filter_by(username = username).first_or_404()
 
-    posts = [
-        {'author': user, 'body': 'Test Post #1'},
-        {'author': user, 'body': 'Test Post #2'}
-    ]
-
+    # posts = [
+    #     {'author': user, 'body': 'Test Post #1'},
+    #     {'author': user, 'body': 'Test Post #2'}
+    # ]
+    posts = user.posts.all()
     return render_template('user.html', user=user, posts = posts)
 
 @app.route('/edit_profile', methods = ['GET', 'POST'])
