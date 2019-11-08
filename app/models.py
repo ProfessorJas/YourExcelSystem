@@ -4,6 +4,16 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
+##  Models for creating datebases
+
+'''
+
+'flask db init'                         # initialize the database, make sure database setted up in the backend
+'flask db migrate -m "message"'         # to migrate the database, 'message' is description of the database(s)
+'flask db upgrade'                      # tell the backended database to upgrade
+
+'''
+
 followers = db.Table(
     'followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),

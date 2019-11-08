@@ -7,3 +7,5 @@ class Config:
 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'mysql+pymysql://root:123456@localhost/testmydb'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    POSTS_PER_PAGE = 3
