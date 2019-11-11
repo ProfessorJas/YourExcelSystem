@@ -12,11 +12,16 @@ from flask_migrate import Migrate
 
 from flask_login import LoginManager
 
+from flask_moment import Moment
+
 app = Flask(__name__)       # assign the Flask object to the variabel app
 app.config.from_object(Config)
 
 # Add bootstrap to prettify the page
 bootstrap = Bootstrap(app)
+
+# add moment to change the timezone
+moment = Moment(app)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)

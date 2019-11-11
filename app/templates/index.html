@@ -2,7 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-	<h1>Hello, {{ current_user.username }}!</h1>
+	<h1>Hello, <span style="font-size: 42px;"><b><i>{{ current_user.username }}</i></b></span>!</h2>
 	{% if form %}
 	{{ wtf.quick_form(form) }}
 	<br>
