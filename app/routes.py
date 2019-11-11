@@ -5,6 +5,7 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 from werkzeug.urls import url_parse
+from flask_bootstrap import Bootstrap
 
 @app.before_request
 def before_request():

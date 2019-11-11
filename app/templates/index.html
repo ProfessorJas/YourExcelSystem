@@ -1,41 +1,31 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
-    <h1>Hola, {{current_user.username}}!</h1>
+{% block app_content %}
+	<h1>Hello, {{ current_user.username }}!</h1>
+	{% if form %}
+	{{ wtf.quick_form(form) }}
+	<br>
+	{% endif %}
 
-    {% if form %}
-    <form action="" method="POST">
-        {{ form.hidden_tag() }}
+	{% for post in posts %}
+		{% include '_post.html' %}
+	{% endfor %}
 
-        <p>
-            {{ form.post.label }} <br>
-            {{ form.post(cols=32, rows=4) }} <br>
+	<nav aria-label="...">
+		<ul class="pager">
+			<li class="previous{% if not prev_url %} disabled{% endif %}">
+				<a href="{{ prev_url or '#' }}">
+					<span aria-hidden="true">&larr;</span> Newer posts
+				</a>
+			</li>
 
-            {% for error in errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
+			<li class="next{% if not next_url %} disabled{% endif %}">
+				<a href="{{ next_url or '#' }}">
+					Older posts <span aria-hidden="true">&rarr;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
 
-        <p>{{ form.submit() }}</p>
-    </form>
-    {% endif %}
-
-    {% for post in posts %}
-        <!-- <table>
-            <tr valign="top">
-                <td><img src="{{ post.author.avatar(36) }}"></td>
-                <td><p><u>{{ post.author.username }}</u> says: <br><b>{{ post.body }}</b> </p></td>
-            </tr>
-        </table>
-             -->
-        {% include '_post.html' %}
-    {% endfor %}
-
-    {% if prev_url %}
-        <a href="{{ prev_url }}">Newer Posts</a>
-    {% endif %}
-
-    {% if next_url %}
-        <a href="{{ next_url }}">Older Posts</a>
-    {% endif %}
 {% endblock %}

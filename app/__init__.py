@@ -1,5 +1,6 @@
 from flask import Flask     # import Flask object from flask package
 from config import Config
+from flask_bootstrap import Bootstrap
 
 import logging
 from logging.handlers import SMTPHandler
@@ -13,6 +14,9 @@ from flask_login import LoginManager
 
 app = Flask(__name__)       # assign the Flask object to the variabel app
 app.config.from_object(Config)
+
+# Add bootstrap to prettify the page
+bootstrap = Bootstrap(app)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)

@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm#从flask_wtf包中导入FlaskForm类
 from wtforms import StringField,PasswordField,BooleanField,SubmitField, TextAreaField#导入这些类
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
 from app.models import User
+from flask_bootstrap import Bootstrap
 
 class LoginForm(FlaskForm):
 	username = StringField('Username', validators=[DataRequired()])
@@ -48,6 +49,6 @@ class EditProfileForm(FlaskForm):
 	############################################################################
 
 class PostForm(FlaskForm):
-	post = TextAreaField('Dude, say somthing!!', validators=[DataRequired(), Length(min=1, max=140)])
+	post = TextAreaField('Dude, Ask Anything!!', validators=[DataRequired(), Length(min=1, max=140)])
 
 	submit = SubmitField('Submit')

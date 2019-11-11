@@ -8,4 +8,5 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'mysql+pymysql://root:123456@localhost/testmydb'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # POSTS_PER_PAGE is used to set the number of posts per page
     POSTS_PER_PAGE = 3
